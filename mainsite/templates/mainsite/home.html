@@ -1,0 +1,31 @@
+{% extends "mainsite/base.html" %}
+{% block content %}
+{% load static %}
+
+<h1>Welcome to TylerWelch.Live</h1>
+  <h4>This is my Personal Professional Website.</h4>
+    <body class="text-faded text-center"> As you can see its currently missing some flavor but fear not I will get to that good old HTML/CSS soon! Check out my about page for more info on me though! But, welcome to my little piece of the internet and a proof of point in demonstration of development and deployment. In the back end I developed my website with the Python Language through the Django framework, and then deployed my application using a Linode Server using a Linux Ubuntu operating system with the Apache2  deployment server. For design I’m using the Bootstrap4 Framework, though there are many to choose from I just like the overall simple feel Bootstrap has to offer. I Plan to go more into detail by writing some articles in my blog section on the building of my current application, as well as other projects that I am working on in effort to help build upon on my never ending development education and to add to research in attempt to aide in any solution to a problem that I can help. I mean that is what Engineers jobs are, right?! To find solutions to problems, and then share in case it can help to be applied somewhere else.</body>
+    <div>
+      
+    </div>
+    <div>
+      <img src="{% static "mainsite/mainimages/old.jpg" %}"class="img-thumbnail" alt="My image">
+    </div>
+    <div></div>
+
+
+
+    {% for post in posts %}
+        <article class="media content-section">
+          <div class="media-body">
+            <div class="article-metadata">
+              <a class="mr-2" href="#">{{ post.author }}</a>
+              <small class="text-muted">{{ post.date_posted|date:"F d, Y" }}</small>
+            </div>
+            <h2><a class="article-title" href="#">{{ post.title }}</a></h2>
+            <p class="article-content">{{ post.content }}</p>
+          </div>
+        </article>
+    {% endfor %}
+
+{% endblock content %}

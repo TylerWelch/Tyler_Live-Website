@@ -1,0 +1,15 @@
+{% extends "mainsite/base.html" %}
+{% block content %}
+    <article class="media content-section">
+      <img class="rounded-circle article-img" src="{{ object.port_image.url }}">
+      <div class="media-body">
+        <div class="article-metadata">
+          <a class="mr-2" href="#">{{ object.port_description }}</a>
+          <a class="mr-2" href="">{{ object.port_author }}</a>
+          <small class="text-muted">{{ object.port_date_posted|date:"F d, Y" }}</small>
+        </div>
+        <h2 class="article-title">{{ object.port_title }}</h2>
+        <p class="article-content">{{ object.port_content }}</p>
+      </div>
+    </article>
+{% endblock content %}
